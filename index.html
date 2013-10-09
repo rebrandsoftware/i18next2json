@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>i18next2json</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<style type="text/css">
+	.notbig
+    {
+        height: 350px;
+        max-height: 350px;  
+    }
+	</style>
+</head> 
+<body> 
+
+<!-- Home -->
+<div data-role="page" id="page1">
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="inputHTML">
+                Input HTML:
+            </label>
+            <textarea name="" id="inputHTML" placeholder="Paste HTML tagged with i18n-data tags here" class="notbig"></textarea>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="inputJS">
+                Input Javascript:
+            </label>
+            <textarea name="" id="inputJS" placeholder="Paste Javascript with i18n.t() functions here" class="notbig"></textarea>
+        </div>
+        <input id="btnGen" type="submit" value="Generate JSON">
+        <div data-role="fieldcontain">
+            <label for="outputJSON">
+                Output JSON:
+            </label>
+            <textarea name="" id="outputJSON" placeholder="Values from your HTML and JS will be extracted and converted to JSON here" class="notbig"></textarea>
+        </div>
+    </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
