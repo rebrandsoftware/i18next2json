@@ -1,9 +1,9 @@
 i18next2json
 ============
-by Mike Gibson - Rebrand Software, LLC
-mike@rebrandsoftware.com
-http://www.rebrandsoftware.com
-twitter:@MikeKGibson
+by Mike Gibson - Rebrand Software, LLC<BR />
+mike@rebrandsoftware.com<BR />
+<a href='http://www.rebrandsoftware.com'>http://www.rebrandsoftware.com</a><BR />
+twitter:<a href='http://www.twitter.com/MikeKGibson'>@MikeKGibson</a><BR />
 
 Description
 ============
