@@ -42,9 +42,13 @@ var app = {
     processJS: function(js, nodes, keys, callback) {
         var a;
         var b;
+        var c;
+        var d;
         var l=0;
         var chr='';
         var myNode;
+        var text='';
+        var comment='';
         app.replaceLinebreaks(js, function(jsnew) {
             if (js.indexOf('i18n.t(') >= 0) {
                 a = jsnew.split("i18n.t(");
@@ -56,7 +60,22 @@ var app = {
                     app.getParent(key, function(retParent, retKey) {
                           parent = retParent;
                           key = retKey;
-                          myNode = new Node(parent, key, 'TODO'); 
+                          text = "TODO";
+                          if (b[2].indexOf('//') >= 0) {
+                              c = b[2].split("//");
+                              comment = c[1].trim();
+                              console.log("comment:" + comment);
+                              if (comment.length >= 1) {
+                                  chr=c[1].charAt(0);
+                                  if (chr === "'" || chr === '"') {
+                                      d = c[1].split(chr);
+                                      if (d.length >= 2) {
+                                          text = d[1];
+                                      }
+                                  }
+                              }
+                          }
+                          myNode = new Node(parent, key, text); 
                           console.log(parent + "." + key);
                           console.log(keys);
                           console.log(keys.indexOf(parent + "." + key));
@@ -105,6 +124,9 @@ var app = {
                               if (target === '' || target==='html') {
                                 app.getText(tag, function(ret) {
                                   text = ret;
+                                  if (text==='') {
+                                      text='TODO';
+                                  }
                                   myNode = new Node(parent, key, text); 
                                   console.log(parent + "." + key);
                                   console.log(keys);
