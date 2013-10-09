@@ -61,14 +61,14 @@ var app = {
                           parent = retParent;
                           key = retKey;
                           text = "TODO";
-                          if (b[2].indexOf('//') >= 0) {
-                              c = b[2].split("//");
+                          if (a[i].indexOf('//') >= 0) {
+                              c = a[i].split("//");
                               comment = c[1].trim();
                               console.log("comment:" + comment);
                               if (comment.length >= 1) {
-                                  chr=c[1].charAt(0);
+                                  chr=comment.charAt(0);
                                   if (chr === "'" || chr === '"') {
-                                      d = c[1].split(chr);
+                                      d = comment.split(chr);
                                       if (d.length >= 2) {
                                           text = d[1];
                                       }
